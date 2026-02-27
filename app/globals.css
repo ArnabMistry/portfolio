@@ -115,6 +115,15 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+.font-soria {
+  font-family: var(--font-soria);
+}
+.font-chunk {
+  font-family: var(--font-chunk);
+}
+.font-alexbrush {
+  font-family: var(--font-alexbrush);
+}
 
 @layer base {
   * {

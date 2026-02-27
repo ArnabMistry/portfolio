@@ -1,7 +1,26 @@
 import PortfolioBackground from "@/components/ui/bg";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const soria = localFont({
+  src: "../fonts/soria-font.ttf",
+  variable: "--font-soria",
+  display: "swap",
+});
+
+const chunk = localFont({
+  src: "../fonts/chunk-font.ttf",
+  variable: "--font-chunk",
+  display: "swap",
+});
+
+const alexbrush = localFont({
+  src: "../fonts/alexbrush-font.ttf",
+  variable: "--font-alexbrush",
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +45,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative bg-black`}
+        className={`${alexbrush.variable} ${soria.variable} ${chunk.variable} ${geistSans.variable} ${geistMono.variable} antialiased relative bg-black`}
       >
-        {/* Fixed Global Background */}
         <PortfolioBackground />
 
-        {/* Scrollable Content Layer */}
         <div className="relative z-10">{children}</div>
       </body>
     </html>
