@@ -22,6 +22,12 @@ const alexbrush = localFont({
   display: "swap",
 });
 
+const brolimo = localFont({
+  src: "../fonts/BrolimoRegular.ttf",
+  variable: "--font-brolimo",
+  display: "swap",
+});
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -45,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${alexbrush.variable} ${soria.variable} ${chunk.variable} ${geistSans.variable} ${geistMono.variable} antialiased relative bg-black`}
+        className={` ${brolimo.variable} ${alexbrush.variable} ${soria.variable} ${chunk.variable} ${geistSans.variable} ${geistMono.variable} antialiased relative bg-black`}
       >
         <PortfolioBackground />
 

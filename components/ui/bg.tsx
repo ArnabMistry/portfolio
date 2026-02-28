@@ -13,7 +13,7 @@ export default function PortfolioBackground() {
   return (
     <div className="fixed inset-0 -z-10">
       <Shader className="h-screen w-screen">
-        <Swirl colorA="#0007a9" colorB="#28193c" speed={2} />
+        <Swirl colorA="#0007a9" colorB="#28193c" speed={3} />
         <ChromaticAberration />
         <CursorRipples intensity={20} />
         <FlowField />

@@ -124,6 +124,9 @@
 .font-alexbrush {
   font-family: var(--font-alexbrush);
 }
+.font-brolimo {
+  font-family: var(--font-brolimo);
+}
 
 @layer base {
   * {
