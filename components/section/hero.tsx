@@ -27,6 +27,12 @@ export default function Hero() {
               DEDICATION
             </h1>
           </div>
+          <div className="pt-27 flex justify-end items-center gap-4">
+            <div className="w-12 h-px bg-white" />
+            <h1 className="text-white text-sm font-semibold tracking-widest font-brolimo">
+              SCROLL TO EXPLORE
+            </h1>
+          </div>
         </div>
       </section>
     </>
