@@ -66,7 +66,7 @@ export default function AboutReveal() {
       <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-10">
         {/* Left label */}
         <div className="md:col-span-4">
-          <p className="font-sans text-xs md:text-sm uppercase tracking-widest text-gray-400">
+          <p className="text-white/55 uppercase text-sm font-semibold tracking-widest font-brolimo">
             01 // About Me
           </p>
         </div>
