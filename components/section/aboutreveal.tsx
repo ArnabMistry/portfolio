@@ -61,7 +61,7 @@ export default function AboutReveal() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[150vh] py-32 px-6 sm:px-12 md:px-24"
+      className="relative w-full min-h-[150vh] py-32 px-6 sm:px-12 md:px-24 mix-blend-difference"
     >
       <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-10">
         {/* Left label */}
