@@ -52,7 +52,7 @@ export default function AboutReveal() {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start 80%", "end 20%"],
+    offset: ["start 80%", "end 80%"],
   });
 
   // const words = text.split(" ");
@@ -107,7 +107,7 @@ function RevealWord({
   const threshold = index / total;
   const opacity = useTransform(
     scrollYProgress,
-    [threshold, threshold + 0.02],
+    [threshold, threshold + 0.06],
     [0.15, 1],
   );
 
