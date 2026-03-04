@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
       <section className="pt-12 flex items-center">
         <div className="w-full px-10 md:px-20">
-          <h1 className="text-white text-7xl md:text-[10vw] font-chunk leading-none">
+          <h1 className="text-white tracking-wide text-7xl md:text-[10vw] font-chunk leading-none">
             PRECISION
           </h1>
           <div className="flex justify-center my-6">
@@ -23,7 +23,7 @@ export default function Hero() {
             </h2>
           </div>
           <div className="flex justify-end">
-            <h1 className="text-white text-7xl md:text-[10vw] font-chunk leading-none">
+            <h1 className="text-white tracking-wide text-7xl md:text-[10vw] font-chunk leading-none">
               DEDICATION
             </h1>
           </div>

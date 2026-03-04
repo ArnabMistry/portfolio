@@ -74,36 +74,55 @@ export default function AboutReveal() {
         {/* Word reveal */}
         <div className="md:col-span-8 flex flex-wrap gap-x-[1.5vw] gap-y-[1vw] items-baseline">
           {words.map((wordObj, i) => {
-            const threshold = i / total;
-
-            const opacity = useTransform(
-              scrollYProgress,
-              [threshold, threshold + 0.02],
-              [0.15, 1],
-            );
-
             return (
-              <motion.span
+              <RevealWord
                 key={i}
-                style={{ opacity }}
-                className={`
-                  leading-[1.1]
-                  text-white
-                  tracking-tight
-                  text-[8vw] sm:text-[6vw] md:text-[4.5vw]
-                  ${
-                    wordObj.style === "cursive"
-                      ? "font-alexbrush"
-                      : "font-brolimo uppercase"
-                  }
-                `}
-              >
-                {wordObj.text}
-              </motion.span>
+                index={i}
+                total={total}
+                text={wordObj.text}
+                isCursive={wordObj.style === "cursive"}
+                scrollYProgress={scrollYProgress}
+              />
             );
           })}
         </div>
       </div>
     </section>
+  );
+}
+
+function RevealWord({
+  index,
+  total,
+  text,
+  isCursive,
+  scrollYProgress,
+}: {
+  index: number;
+  total: number;
+  text: string;
+  isCursive: boolean;
+  scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+}) {
+  const threshold = index / total;
+  const opacity = useTransform(
+    scrollYProgress,
+    [threshold, threshold + 0.02],
+    [0.15, 1],
+  );
+
+  return (
+    <motion.span
+      style={{ opacity }}
+      className={`
+        leading-[1.1]
+        text-white
+        tracking-tight
+        text-[8vw] sm:text-[6vw] md:text-[4.5vw]
+        ${isCursive ? "font-alexbrush" : "font-brolimo uppercase"}
+      `}
+    >
+      {text}
+    </motion.span>
   );
 }
