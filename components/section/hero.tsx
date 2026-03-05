@@ -18,7 +18,7 @@ export default function Hero() {
             PRECISION
           </h1>
           <div className="flex justify-center my-6">
-            <h2 className="text-7xl md:text-[12vw] font-alexbrush text-blue-500">
+            <h2 className="text-7xl md:text-[12vw] font-alexbrush text-orange-500">
               and
             </h2>
           </div>

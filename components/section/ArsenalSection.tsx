@@ -43,11 +43,11 @@ export default function ArsenalSection() {
         {techStack.map((category, index) => (
           <div
             key={index}
-            className="flex flex-col lg:flex-row group border-b border-white/10 py-10 lg:py-16 hover:bg-blue-500/10 transition-colors duration-300 cursor-default"
+            className="flex flex-col lg:flex-row group border-b border-white/10 py-10 lg:py-16 hover:bg-orange-500/10 transition-colors duration-300 cursor-default"
           >
             {/* Left Title */}
             <div className="w-full lg:w-1/3 mb-6 lg:mb-0">
-              <h3 className="font-alexbrush italic text-[10vw] sm:text-[8vw] lg:text-[4.5vw] text-white leading-none lowercase tracking-tight group-hover:text-blue-500 group-hover:translate-x-3 transition-all duration-300">
+              <h3 className="font-alexbrush italic text-[10vw] sm:text-[8vw] lg:text-[4.5vw] text-white leading-none lowercase tracking-tight group-hover:text-orange-500 group-hover:translate-x-3 transition-all duration-300">
                 {category.title}
               </h3>
             </div>
