@@ -1,4 +1,5 @@
 // import PortfolioBackground from "@/components/ui/bg";
+import BackgroundShader from "@/components/ui/shaderbg";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
@@ -54,9 +55,9 @@ export default function RootLayout({
         className={` ${brolimo.variable} ${alexbrush.variable} ${soria.variable} ${chunk.variable} ${geistSans.variable} ${geistMono.variable} antialiased relative bg-black`}
       >
         {/* <PortfolioBackground /> */}
-        {/* <div className="fixed inset-0 z-0 pointer-events-none">
-          <EffectScene />
-        </div> */}
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <BackgroundShader />
+        </div>
 
         <div className="relative z-10">{children}</div>
       </body>
