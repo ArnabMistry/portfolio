@@ -26,7 +26,7 @@ const techStack: TechCategory[] = [
 
 export default function ArsenalSection() {
   return (
-    <section className="relative w-full min-h-screen py-32 px-6 sm:px-12 md:px-16 lg:px-24 z-10 mix-blend-difference text-white">
+    <section className="relative w-full min-h-screen py-12 px-6 sm:px-12 md:px-16 lg:px-24 z-10 mix-blend-difference text-white">
       {/* Header */}
       <div className="w-full flex flex-col md:flex-row md:items-end justify-between border-b border-white/20 pb-8 mb-16">
         <h2 className="font-brolimo text-[12vw] md:text-[8vw] leading-none tracking-tighter uppercase">
@@ -43,11 +43,11 @@ export default function ArsenalSection() {
         {techStack.map((category, index) => (
           <div
             key={index}
-            className="flex flex-col lg:flex-row group border-b border-white/10 py-10 lg:py-16 hover:bg-orange-500/10 transition-colors duration-300 cursor-default"
+            className="flex flex-col lg:flex-row group border-b border-white/10 py-10 lg:py-16 hover:bg-orange-600/14 transition-colors duration-300 cursor-default"
           >
             {/* Left Title */}
             <div className="w-full lg:w-1/3 mb-6 lg:mb-0">
-              <h3 className="font-alexbrush italic text-[10vw] sm:text-[8vw] lg:text-[4.5vw] text-white leading-none lowercase tracking-tight group-hover:text-orange-500 group-hover:translate-x-3 transition-all duration-300">
+              <h3 className="font-alexbrush italic text-[10vw] sm:text-[8vw] lg:text-[4.5vw] text-white leading-none lowercase tracking-tight group-hover:text-orange-700 group-hover:translate-x-3 transition-all duration-300">
                 {category.title}
               </h3>
             </div>
