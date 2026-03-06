@@ -1,13 +1,14 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const projects = [
-  "Moirai",
-  "Nudge",
-  "Chameleon Docs",
-  "ASAP Protocol",
-  "GlassBox",
+  "ISF",
+  "Fix My Street",
+  "ISL Translator",
+  "Hotwheels",
+  "Travel Sathi",
 ];
 
 export default function ProjectsShowcase() {
@@ -31,16 +32,26 @@ export default function ProjectsShowcase() {
       </div>
 
       {/* FLOATING PROJECT IMAGE */}
-      <div className="absolute top-16 left-4 sm:top-24 sm:left-8 md:top-12 md:left-12 z-10 w-65 h-45 sm:w-[320px] sm:h-55 md:w-100 md:h-65 lg:w-125 lg:h-80 pointer-events-none">
+
+      <motion.div
+        drag
+        dragMomentum={false}
+        dragElastic={0.2}
+        whileTap={{ scale: 0.97 }}
+        className="absolute top-16 left-4 sm:top-24 sm:left-8 md:top-12 md:left-12
+  z-10 w-65 h-45 sm:w-[320px] sm:h-55 md:w-100 md:h-65
+  lg:w-125 lg:h-80 cursor-grab active:cursor-grabbing"
+      >
         <div className="absolute inset-0 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
           <Image
             src="/placeholder/shawn.jpg"
             alt="Moirai"
             fill
             className="object-cover opacity-80"
+            draggable={false}
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* PROJECT LIST */}
       <div className="absolute bottom-12 right-4 sm:right-6 md:right-12 z-20 flex flex-col items-end">
