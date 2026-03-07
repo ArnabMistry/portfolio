@@ -1,7 +1,13 @@
+"use client";
+
 import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from "lucide-react";
 import FooterRow from "./FooterRow";
 
 export default function FooterContact() {
+  const openExternal = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section className="relative w-full min-h-screen flex flex-col pt-32 text-zinc-100">
       <div className="flex flex-col items-start w-full px-4 md:px-12 mb-24">
@@ -25,24 +31,30 @@ export default function FooterContact() {
           title="Send a Message"
           label="arnabmistry05@gmail.com"
           icon={<MailIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />}
+          onClick={() => {
+            window.location.href = "mailto:arnabmistry05@gmail.com";
+          }}
         />
 
         <FooterRow
           title="GitHub"
           label="Open Source"
           icon={<GithubIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />}
+          onClick={() => openExternal("https://github.com/")}
         />
 
         <FooterRow
           title="X / Twitter"
           label="Thoughts & Updates"
           icon={<TwitterIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />}
+          onClick={() => openExternal("https://x.com/")}
         />
 
         <FooterRow
           title="LinkedIn"
           label="Hire Me"
           icon={<LinkedinIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />}
+          onClick={() => openExternal("https://www.linkedin.com/")}
         />
       </div>
     </section>

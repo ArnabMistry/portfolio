@@ -8,9 +8,10 @@ interface FooterRowProps {
   title: string;
   label: string;
   icon: ReactNode;
+  onClick?: () => void;
 }
 
-export default function FooterRow({ title, label, icon }: FooterRowProps) {
+export default function FooterRow({ title, label, icon, onClick }: FooterRowProps) {
   const [isHovered, setIsHovered] = useState(false);
   const arrowTransition: Transition = {
     type: "spring",
@@ -33,6 +34,16 @@ export default function FooterRow({ title, label, icon }: FooterRowProps) {
         onMouseLeave={() => setIsHovered(false)}
         onFocus={() => setIsHovered(true)}
         onBlur={() => setIsHovered(false)}
+        onClick={onClick}
+        onKeyDown={(event) => {
+          if (!onClick) return;
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            onClick();
+          }
+        }}
+        role={onClick ? "button" : undefined}
+        tabIndex={onClick ? 0 : undefined}
       >
         {/* Top Content */}
         <div className="relative z-10 flex justify-between items-center w-full px-4 md:px-12">
