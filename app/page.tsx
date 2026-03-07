@@ -1,4 +1,5 @@
 "use client";
+import FooterContact from "@/components/FooterContact";
 import AboutReveal from "@/components/section/aboutreveal";
 import ArsenalSection from "@/components/section/ArsenalSection";
 import Hero from "@/components/section/hero";
@@ -10,6 +11,7 @@ export default function Home() {
       <AboutReveal />
       <ArsenalSection />
       <ProjectShowcase />
+      <FooterContact />
     </main>
   );
 }
