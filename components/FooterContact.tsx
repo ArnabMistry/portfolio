@@ -40,21 +40,27 @@ export default function FooterContact() {
           title="GitHub"
           label="Open Source"
           icon={<GithubIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />}
-          onClick={() => openExternal("https://github.com/")}
+          onClick={() => openExternal("https://github.com/ArnabMistry")}
         />
 
         <FooterRow
           title="X / Twitter"
           label="Thoughts & Updates"
-          icon={<TwitterIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />}
-          onClick={() => openExternal("https://x.com/")}
+          icon={
+            <TwitterIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />
+          }
+          onClick={() => openExternal("https://x.com/arnabcore")}
         />
 
         <FooterRow
           title="LinkedIn"
           label="Hire Me"
-          icon={<LinkedinIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />}
-          onClick={() => openExternal("https://www.linkedin.com/")}
+          icon={
+            <LinkedinIcon className="w-10 h-10 md:w-16 md:h-16 text-white" />
+          }
+          onClick={() =>
+            openExternal("https://www.linkedin.com/in/arnabmistry")
+          }
         />
       </div>
     </section>
