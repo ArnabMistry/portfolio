@@ -1,4 +1,5 @@
 // import PortfolioBackground from "@/components/ui/bg";
+import MultiCursor from "@/components/MultiCursor";
 import BackgroundShader from "@/components/ui/shaderbg";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -58,7 +59,7 @@ export default function RootLayout({
         <div className="fixed inset-0 z-0 pointer-events-none">
           <BackgroundShader />
         </div>
-
+        <MultiCursor />
         <div className="relative z-10">{children}</div>
       </body>
     </html>
