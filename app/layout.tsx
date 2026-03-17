@@ -1,5 +1,6 @@
 // import PortfolioBackground from "@/components/ui/bg";
 import MultiCursor from "@/components/MultiCursor";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import BackgroundShader from "@/components/ui/shaderbg";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -55,12 +56,14 @@ export default function RootLayout({
       <body
         className={` ${brolimo.variable} ${alexbrush.variable} ${soria.variable} ${chunk.variable} ${geistSans.variable} ${geistMono.variable} antialiased relative bg-black`}
       >
-        {/* <PortfolioBackground /> */}
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          <BackgroundShader />
-        </div>
-        <MultiCursor />
-        <div className="relative z-10">{children}</div>
+        <SmoothScrollProvider>
+          {/* <PortfolioBackground /> */}
+          <div className="fixed inset-0 z-0 pointer-events-none">
+            <BackgroundShader />
+          </div>
+          <MultiCursor />
+          <div className="relative z-10">{children}</div>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
