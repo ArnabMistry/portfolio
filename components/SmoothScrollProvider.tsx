@@ -12,7 +12,7 @@ export default function SmoothScrollProvider({
 }: SmoothScrollProviderProps) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.1,
+      lerp: 0.075,
       smoothWheel: true,
     });
 
