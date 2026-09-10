@@ -42,9 +42,11 @@ const projects = [
   },
 ];
 
+type Project = (typeof projects)[number];
+
 export default function ProjectsShowcase() {
-  const [hoveredProject, setHoveredProject] = useState(projects[0]);
-  const [activeProject, setActiveProject] = useState<any | null>(null);
+  const [hoveredProject, setHoveredProject] = useState<Project>(projects[0]);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
     <section className="relative h-screen w-full text-zinc-100 font-sans overflow-hidden py-20 z-10">
@@ -75,6 +77,7 @@ export default function ProjectsShowcase() {
             src={hoveredProject.image}
             alt={hoveredProject.title}
             fill
+            sizes="(max-width: 768px) 100vw, 420px"
             className="object-cover opacity-80"
           />
         </motion.div>
@@ -108,6 +111,9 @@ export default function ProjectsShowcase() {
       <AnimatePresence>
         {activeProject && (
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label={activeProject.title}
             className="fixed inset-0 bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -133,6 +139,7 @@ export default function ProjectsShowcase() {
                 src={activeProject.image}
                 alt={activeProject.title}
                 fill
+                sizes="(max-width: 1024px) 90vw, 900px"
                 className="object-cover"
               />
             </motion.div>
@@ -190,7 +197,9 @@ export default function ProjectsShowcase() {
 
             {/* CLOSE BUTTON */}
             <button
-              className="absolute top-6 right-6 text-2xl"
+              type="button"
+              aria-label="Close project details"
+              className="absolute top-6 right-6 text-2xl cursor-pointer"
               onClick={() => setActiveProject(null)}
             >
               ✕

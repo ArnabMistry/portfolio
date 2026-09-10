@@ -6,7 +6,7 @@ import Hero from "@/components/section/hero";
 import ProjectShowcase from "@/components/section/projects";
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
       <Hero />
       <AboutReveal />
       <ArsenalSection />

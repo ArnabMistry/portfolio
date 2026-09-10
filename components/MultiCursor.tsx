@@ -16,7 +16,7 @@ export default function MultiCursor() {
     window.addEventListener("mousemove", move);
 
     return () => window.removeEventListener("mousemove", move);
-  }, []);
+  }, [mouseX, mouseY]);
 
   // different spring physics for each follower
   const spring1X = useSpring(mouseX, { stiffness: 600, damping: 35 });

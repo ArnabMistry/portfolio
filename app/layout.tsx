@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${brolimo.variable} ${alexbrush.variable} ${soria.variable} ${chunk.variable} ${geistSans.variable} ${geistMono.variable} antialiased relative bg-black`}
+        className={`${brolimo.variable} ${alexbrush.variable} ${soria.variable} ${chunk.variable} ${geistSans.variable} ${geistMono.variable} antialiased relative bg-black`}
       >
         <SmoothScrollProvider>
           {/* <PortfolioBackground /> */}
