@@ -61,18 +61,18 @@ export default function AboutReveal() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[150vh] py-32 px-6 sm:px-12 md:px-24 mix-blend-difference"
+      className="relative w-full min-h-[130vh] md:min-h-[150vh] py-16 sm:py-24 md:py-32 px-4 sm:px-12 md:px-24 mix-blend-difference"
     >
-      <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
         {/* Left label */}
         <div className="md:col-span-4">
-          <p className="text-white/55 uppercase text-sm font-semibold tracking-widest font-brolimo">
+          <p className="text-white/55 uppercase text-xs sm:text-sm font-semibold tracking-widest font-brolimo mb-2 md:mb-0">
             01 // About Me
           </p>
         </div>
 
         {/* Word reveal */}
-        <div className="md:col-span-8 flex flex-wrap gap-x-[1.5vw] gap-y-[1vw] items-baseline">
+        <div className="md:col-span-8 flex flex-wrap gap-x-2 sm:gap-x-[1.5vw] gap-y-1 sm:gap-y-[1vw] items-baseline">
           {words.map((wordObj, i) => {
             return (
               <RevealWord
@@ -115,10 +115,10 @@ function RevealWord({
     <motion.span
       style={{ opacity }}
       className={`
-        leading-[1.1]
+        leading-[1.15] sm:leading-[1.1]
         text-white
         tracking-tight
-        text-[8vw] sm:text-[6vw] md:text-[4.5vw]
+        text-[6.5vw] sm:text-[5.5vw] md:text-[4.5vw]
         ${isCursive ? "font-alexbrush" : "font-brolimo uppercase"}
       `}
     >
