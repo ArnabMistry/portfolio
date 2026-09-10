@@ -8,6 +8,15 @@ export default function MultiCursor() {
   const mouseY = useMotionValue(0);
 
   useEffect(() => {
+    // Only track cursor on devices that support hover/fine pointer
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      !window.matchMedia("(hover: hover) and (pointer: fine)").matches
+    ) {
+      return;
+    }
+
     const move = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -32,7 +41,7 @@ export default function MultiCursor() {
     <>
       {/* fast follower */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-9999"
+        className="hidden md:block fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-9999"
         style={{
           x: spring1X,
           y: spring1Y,
@@ -43,7 +52,7 @@ export default function MultiCursor() {
 
       {/* medium follower */}
       <motion.div
-        className="fixed top-0 left-0 w-5 h-5 border-2 border-orange-500 rounded-full pointer-events-none z-9998"
+        className="hidden md:block fixed top-0 left-0 w-5 h-5 border-2 border-orange-500 rounded-full pointer-events-none z-9998"
         style={{
           x: spring2X,
           y: spring2Y,
@@ -54,7 +63,7 @@ export default function MultiCursor() {
 
       {/* slow follower */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border-2 border-orange-800 rounded-full pointer-events-none z-9997"
+        className="hidden md:block fixed top-0 left-0 w-10 h-10 border-2 border-orange-800 rounded-full pointer-events-none z-9997"
         style={{
           x: spring3X,
           y: spring3Y,
