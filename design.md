@@ -217,14 +217,47 @@ The project loads **4 local font files** in [app/layout.tsx](file:///c:/builds/p
 
 ---
 
-## 11. Responsive Design & Breakpoints
+## 11. Responsive Design & Mobile Art Direction Principles
 
-- **Tailwind Breakpoints Used**: `sm` (640px), `md` (768px), `lg` (1024px).
-- **Fluid Typography**: Extensive reliance on `vw` units to scale fluidly between mobile (`7xl`, `8vw`, `12vw`) and desktop (`4.5vw`, `6vw`, `10vw`).
-- **Layout Collapsing**:
-  - Grid columns collapse from `md:grid-cols-12` to single-column `grid-cols-1` on mobile.
-  - Tech categories collapse from row (`lg:flex-row`) to vertical stack (`flex-col`).
-  - Section headers shift from `flex-col` to `md:flex-row md:items-end justify-between`.
+The portfolio employs **mobile-first art direction** rather than simply scaling desktop layouts down. The brutalist, editorial identity is maintained across all screen widths (tested from 320px up to 1440px+).
+
+### Breakpoint Philosophy
+- **Base (< 640px)**: Compact mobile devices (320px–414px). Layouts stack vertically; typography scales proportionally with viewport-width limits; interactive elements feature persistent active states; desktop hover dependencies are converted to direct touch targets.
+- **`sm` (640px – 767px)**: Large phones and mini tablets.
+- **`md` (768px – 1023px)**: Tablets and small laptops. Transition boundary where multi-column grids and dual-axis alignments unlock.
+- **`lg` (1024px+)**: Standard desktop displays. Full spatial distribution, absolute coordinates, and mouse-following interactions activate.
+
+### Mobile Gutter & Spacing Conventions
+- **Horizontal Screen Padding**:
+  - Compact Mobile (320px–414px): `px-4` (16px) standard gutter; ensures maximal readable width while preventing edge clipping.
+  - Phablet/Tablet (640px–767px): `px-8` to `px-10`.
+  - Desktop (768px–1023px): `px-12` to `px-16`.
+  - Large Screens (1024px+): `px-20` to `px-24`.
+- **Vertical Rhythm**:
+  - Sections avoid hardcoded viewport heights (`h-screen`) on mobile. Instead use `min-h-[85vh]` or `min-h-[90vh]` with vertical padding (`py-12` to `py-16`) to eliminate content crowding and clipping on short mobile screens.
+
+### Fluid Typography Scale Rules
+1. **Brutalist Display Headlines (`font-chunk`)**:
+   - Mobile: `text-[13vw] leading-[0.88]` to preserve colossal monumentality without exceeding horizontal margins.
+   - Desktop: `md:text-[10vw] leading-none`.
+2. **Cursive Accents (`font-alexbrush`)**:
+   - Mobile: `text-[15vw]` slightly offset to maintain fluid intersection with brutalist text.
+   - Desktop: `md:text-[12vw]`.
+3. **Editorial Row Titles (`font-soria`)**:
+   - Mobile: `text-2xl sm:text-4xl` for list items, preventing collision with trailing arrow icons.
+   - Desktop: `md:text-[5.5vw] lg:text-[6vw]`.
+4. **Section Category Headers (`font-brolimo`)**:
+   - Mobile: `text-4xl sm:text-6xl`.
+   - Desktop: `md:text-[6vw] lg:text-[4.5vw]`.
+5. **Word Reveal Narrative**:
+   - Mobile: `text-[6.5vw] leading-[1.15]` so individual words remain legible on 320px devices without artificial wrapping.
+   - Desktop: `md:text-[4.5vw] leading-[1.1]`.
+
+### Touch & Mobile Interaction Rules
+- **No Hover-Only Affordances**: On mobile, elements that reveal on desktop hover (such as active project indicators in ProjectShowcase) must have a persistent active indicator for the selected item.
+- **Custom Cursor Degradation**: The `MultiCursor` component automatically hides on mobile devices (`hidden md:block`) and bypasses `mousemove` event listeners on coarse pointer devices (`(pointer: coarse)` / `!matches("(hover: hover) and (pointer: fine)")`), eliminating phantom cursor artifacts and saving mobile CPU/GPU cycles.
+- **Modal Viewport Sheets**: Mobile modals render as responsive, vertically scrollable dialog sheets (`max-w-sm max-h-[90vh] overflow-y-auto rounded-3xl bg-zinc-950/90 border border-white/10 backdrop-blur-md`) with dedicated 40px circular touch close targets, while desktop seamlessly uses `md:contents` to preserve the original cinematic absolute-positioned layout.
+- **Safe Area Spacing**: Footers incorporate generous bottom padding (`pb-10` to `pb-12`) to account for mobile browser URL bars and home-indicator gesture bars.
 
 ---
 
