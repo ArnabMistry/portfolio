@@ -29,7 +29,7 @@ export default function FooterRow({ title, label, icon, onClick }: FooterRowProp
   return (
     <div className="overflow-hidden">
       <div
-        className="relative w-full border-t border-white/20 py-8 md:py-12 overflow-hidden cursor-pointer block"
+        className="relative w-full border-t border-white/20 py-5 sm:py-8 md:py-12 overflow-hidden cursor-pointer block"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onFocus={() => setIsHovered(true)}
@@ -46,13 +46,13 @@ export default function FooterRow({ title, label, icon, onClick }: FooterRowProp
         tabIndex={onClick ? 0 : undefined}
       >
         {/* Top Content */}
-        <div className="relative z-10 flex justify-between items-center w-full px-4 md:px-12">
-          <h2 className="font-soria font-black text-4xl sm:text-6xl md:text-[6vw] leading-none uppercase tracking-normal pt-2 text-white">
+        <div className="relative z-10 flex justify-between items-center w-full px-4 sm:px-8 md:px-12">
+          <h2 className="font-soria font-black text-2xl sm:text-4xl md:text-[5.5vw] lg:text-[6vw] leading-none uppercase tracking-normal pt-1 sm:pt-2 text-white">
             {title}
           </h2>
 
-          <div className="flex items-center gap-4">
-            <span className="font-sans font-semibold text-[10px] md:text-sm uppercase tracking-widest hidden sm:block text-white">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <span className="font-sans font-semibold text-[10px] md:text-sm uppercase tracking-widest hidden sm:block text-zinc-300">
               {label}
             </span>
 
@@ -92,7 +92,7 @@ export default function FooterRow({ title, label, icon, onClick }: FooterRowProp
               <div key={i} className="flex items-center shrink-0">
                 <span
                   className="whitespace-nowrap uppercase font-soria font-black
-                text-4xl sm:text-6xl md:text-[6vw] tracking-normal pt-2 px-[4vw] text-white"
+                text-2xl sm:text-4xl md:text-[5.5vw] lg:text-[6vw] tracking-normal pt-1 sm:pt-2 px-[4vw] text-white"
                 >
                   {title}
                 </span>
